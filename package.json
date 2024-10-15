@@ -1,5 +1,5 @@
 {
-  "name": "youtube-search-api",
+  "name": "@forkprince/youtube-search-api",
   "version": "1.0.0",
   "description": "A lightweight package for retrieving data from YouTube without needing an API key.",
   "main": "index.js",
