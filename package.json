@@ -1,11 +1,8 @@
 {
   "name": "@forkprince/youtube-search-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight package for retrieving data from YouTube without needing an API key.",
   "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
