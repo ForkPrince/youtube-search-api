@@ -1,7 +1,3 @@
-Here’s an improved version of the README:
-
----
-
 # YouTube Search API
 
 A lightweight package for retrieving data from YouTube without needing an API key.
