@@ -1,36 +1,22 @@
 {
   "name": "youtube-search-api",
-  "version": "1.2.2",
-  "description": "Node.js easy to get Youtube results with playlist by provided keywords, no Login or API key required!",
+  "version": "1.0.0",
+  "description": "A lightweight package for retrieving data from YouTube without needing an API key.",
   "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/damonwonghv/youtube-search-api.git"
+    "url": "git+https://github.com/ForkPrince/youtube-search-api.git"
   },
-  "keywords": [
-    "Youtube",
-    "search",
-    "api",
-    "youtube-search",
-    "youtube-api",
-    "youtube",
-    "api",
-    "play",
-    "youtube playlist",
-    "playlist",
-    "live",
-    "channel"
-  ],
-  "author": "thisisdamon",
+  "author": "Prince527, Damon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/damonwonghv/youtube-search-api/issues"
+    "url": "https://github.com/ForkPrince/youtube-search-api/issues"
   },
-  "homepage": "https://github.com/damonwonghv/youtube-search-api#readme",
-  "dependencies": {
-    "axios": "^0.21.0"
-  }
+  "homepage": "https://github.com/ForkPrince/youtube-search-api#readme"
 }
