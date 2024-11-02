@@ -19,7 +19,7 @@ async function GetYoutubeInitData(url) {
 
     return { init, token, context };
   } catch (error) {
-    throw error;
+    return { error };
   }
 }
 
@@ -33,7 +33,7 @@ async function GetYoutubePlayerDetail(url) {
     const init = JSON.parse(getInit[1].split("</script>")[0].slice(0, -1));
     return { ...init.videoDetails };
   } catch (error) {
-    throw error;
+    return { error };
   }
 }
 
@@ -86,7 +86,7 @@ async function getListByKeyword(keyword, playlist = false, limit = 0, options = 
 
     return { items: limit > 0 ? items.slice(0, limit) : items, next: { token, context, continuation } };
   } catch (error) {
-    throw error;
+    return { error };
   }
 }
 
@@ -99,8 +99,6 @@ async function nextPage({ token, context, continuation }, playlist = false, limi
       },
       body: JSON.stringify({ context, continuation }),
     })).json();
-
-    console.log(page);
 
     const items = [];
     page.onResponseReceivedCommands[0].appendContinuationItemsAction.continuationItems.forEach((next) => {
@@ -118,7 +116,7 @@ async function nextPage({ token, context, continuation }, playlist = false, limi
 
     return { items: limit > 0 ? items.slice(0, limit) : items, next: { token, context, continuation } };
   } catch (error) {
-    throw error;
+    return { error };
   }
 }
 
@@ -135,7 +133,7 @@ async function getPlaylistData(id, limit = 0) {
       return { items: limit > 0 ? items.slice(0, limit) : items, metadata: init.metadata };
     } else throw new Error("Invalid playlist");
   } catch (error) {
-    throw error;
+    return { error };
   }
 }
 
@@ -147,7 +145,7 @@ async function getChannelById(id) {
 
     return items;
   } catch (error) {
-    throw error;
+    return { error };
   }
 };
 
@@ -174,7 +172,7 @@ async function getVideoDetails(id) {
       suggestion: result.secondaryResults.secondaryResults.results.filter((item) => item.hasOwnProperty("compactVideoRenderer")).map(compactVideoRenderer) 
     };
   } catch (error) {
-    throw error;
+    return { error };
   }
 }
 
@@ -195,7 +193,7 @@ function videoRender(json) {
       isLive: video.badges?.some(badge => badge.metadataBadgeRenderer?.style === "BADGE_STYLE_TYPE_LIVE_NOW") || video.thumbnailOverlays?.some(overlay => overlay.thumbnailOverlayTimeStatusRenderer?.style === "LIVE") || false
     };
   } catch (error) {
-    throw error;
+    return { error };
   }
 }
 
